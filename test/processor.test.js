@@ -732,7 +732,9 @@ describe('Processor', function() {
         .saveToFile(testFile);
     });
 
-    it('should save output files with special characters', function(done) {
+    var skipAsteriskAndDoubleQuote = os.match(/win(32|64)/);
+
+    (skipAsteriskAndDoubleQuote ? it.skip : it)('should save output files with special characters', function(done) {
       var testFile = path.join(__dirname, 'assets', '[test "special \' char*cters \n.avi');
       this.files.push(testFile);
 
