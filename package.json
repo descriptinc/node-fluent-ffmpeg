@@ -33,5 +33,6 @@
   "main": "index",
   "scripts": {
     "test": "make test"
-  }
+  },
+  "types": "index.d.ts"
 }
