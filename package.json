@@ -28,7 +28,7 @@
     "which": "^1.1.1"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=10"
   },
   "main": "index",
   "scripts": {
