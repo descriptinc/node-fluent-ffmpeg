@@ -16,6 +16,8 @@ jobs:
         architecture:
           - x64
     name: Node ${{ matrix.node_version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
+    env:
+      FLVTOOL2_PRESENT: no
     steps:
       - uses: FedericoCarboni/setup-ffmpeg@v1
         with:
