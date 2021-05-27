@@ -717,7 +717,7 @@ describe('Processor', function() {
     });
 
     it('should save an output file with special characters properly to disk', function(done) {
-      var testFile = path.join(__dirname, 'assets', 'te[s]t video \' " .avi');
+      var testFile = path.join(__dirname, 'assets', 'te[s]t video \' .avi');
       this.files.push(testFile);
 
       this.getCommand({ source: this.testfile, logger: testhelper.logger })
