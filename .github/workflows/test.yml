@@ -15,13 +15,14 @@ jobs:
           - 14
         architecture:
           - x64
-        # an extra windows-x86 run:
-        include:
-          - os: windows-2016
-            node_version: 12
-            architecture: x86
     name: Node ${{ matrix.node_version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
     steps:
+      - uses: FedericoCarboni/setup-ffmpeg@v1
+        with:
+          # Not strictly necessary, but it may prevent rate limit
+          # errors especially on GitHub-hosted macos machines.
+          token: ${{ secrets.GITHUB_TOKEN }}
+        id: setup-ffmpeg
       - uses: actions/checkout@v2
       - name: Setup node
         uses: actions/setup-node@v2
