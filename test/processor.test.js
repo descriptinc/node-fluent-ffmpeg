@@ -326,7 +326,9 @@ describe('Processor', function() {
           .saveToFile(testFile);
     });
 
-    it('should send the process custom signals with .kill(signal)', function(done) {
+    var skipSignals = os.match(/win(32|64)/);
+
+    (skipSignals ? it.skip : it)('should send the process custom signals with .kill(signal)', function(done) {
       this.timeout(60000);
 
       var testFile = path.join(__dirname, 'assets', 'testProcessKillCustom.avi');
